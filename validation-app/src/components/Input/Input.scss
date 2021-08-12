@@ -1,0 +1,63 @@
+.validation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #34e89e;
+  background: -webkit-linear-gradient(to right, #0f3443, #34e89e);
+  background: linear-gradient(to right, #0f3443, #34e89e);
+}
+
+.validation {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  padding: 50px 100px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.validation-heading {
+  letter-spacing: 0.3rem;
+  font-weight: 100;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.validation-input {
+  border: 1px solid #ffffff;
+  background: none;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.validation-btn {
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 60px;
+  cursor: pointer;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 30px;
+
+  &:hover {
+    background: #ffffff;
+    color: #34e89e;
+  }
+}
+
+.validation-error-message {
+  background: #f14e75;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
