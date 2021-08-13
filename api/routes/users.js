@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+  let regex = new RegExp('^[a-zA-Z]{2}\\d{2}[a-zA-Z]{2}$');
+
+    if (regex.test(userName)) {
+        res.send(console.log("ok"));
+    } else {
+        res.send(console.log("wrong"));
+    }
 });
 
 module.exports = router;

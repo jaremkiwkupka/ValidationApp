@@ -3,7 +3,7 @@ import "./Input.scss";
 
 export const Input = () => {
 
-    const [userName, setUserName] = useState("");
+const [userName, setUserName] = useState("");
 
 const handleChange = (e) => {
       setUserName(e.target.value);
@@ -12,23 +12,27 @@ const handleChange = (e) => {
  const handleValidation = (e) => {
        e.preventDefault();
 
-        let regex = new RegExp('^[a-zA-Z]{2}\\d{2}[a-zA-Z]{2}$');
+       let regex = new RegExp('^[a-zA-Z]{2}\\d{2}[a-zA-Z]{2}$');
 
-        if (regex.test(userName)) {
-            console.log("ok");
-            fetch('http://localhost:3000/validateUserName', {
-                method: 'GET',
-            })
-            .then(response => response.json())
-            .then(userName => {
-                console.log('Success:', userName);
-            })
-            .catch(error => {
-                console.error('Error:', error)
-            });
-        } else {
-            console.log("wrong");
-        }
+       if (regex.test(userName)) {
+           console.log("ok");
+           fetch('http://localhost:3000/users', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json'
+               },
+               body: userName
+           })
+               .then(response => response.json())
+               .then(userName => {
+                   console.log('Success:', userName);
+               })
+               .catch(error => {
+                   console.error('Error:', error)
+               });
+       } else {
+           console.log("wrong");
+       }
     }
 
     return (
